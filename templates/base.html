@@ -1,0 +1,143 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'img/icon.png' %}" type="image/gif" sizes="16x16">
+    <title>Oblique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  </head>
+  <body>
+     <!-- Topbar Start -->
+     <div class="container-fluid bg-success py-2 border-bottom d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-decoration-none text-white pe-3" href=""><i class="bi bi-telephone me-2"></i>+880 255075460</a>
+                        <span class="text-white">|</span>
+                        <a class="text-decoration-none text-white px-3" href=""><i class="bi bi-envelope me-2"></i>info@oblique-bd.com</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white px-2" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-white px-2" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-white px-2" href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-white px-2" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-white ps-2" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Topbar End -->
+    
+    
+        <!-- Navbar Start -->
+        <div class="container-fluid sticky-top border-primary shadow-sm mb-5" style="background-color: #00ba88;">
+            <div class="container bg-success bg-opacity-25">
+                <nav class="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
+                    <a href="index.html" class="logo">
+                        <img src="{% static 'img/logo.png' %}" alt="OBLIQUE-Logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="{% url 'home' %}" class="nav-item nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+                            <a href="{% url 'about' %}" class="nav-item nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
+                            <div class="dropdown">
+                                <button class="nav-link dropdown-toggle {% if request.path == about %}active{% endif %}" id="dropdownMenuButton" data-toggle="dropdown" >Service</button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a href="blog-1.html" class="dropdown-item">Cooling Tower Water Treatment</a>
+                                    <a href="blog-2.html" class="dropdown-item">RO Water Treatment</a>
+                                    <a href="blog-3.html" class="dropdown-item">System Cleaning Treatment</a>
+                                    <a href="blog-4.html" class="dropdown-item">Others Water Treatment</a>
+                                    <a href="blog-5.html" class="dropdown-item">Others Industrial Chemicals</a>
+                                    <a href="blog-6.html" class="dropdown-item">Industrial Parts</a>
+                                </div>
+                            </div>
+                            <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+                            <div class="dropdown">
+                                <button class="nav-link dropdown-toggle {% if request.path == about %}active{% endif %}" id="dropdownMenuButton" data-toggle="dropdown">Md Selim Raza</button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <a href="{% url 'post' %}" class="dropdown-item">Add Post</a>
+                                    <a href="{% url 'blog' %}" class="dropdown-item">Add Blog</a>
+                                    <a href="{% url 'service' %}" class="dropdown-item">Add Services</a>
+                                    <a href="blog-2.html" class="dropdown-item">Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+    {% block contain %}
+    
+    {% endblock contain %}
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-success bg-opacity-50 mt-5 py-4">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="d-inline-block text-uppercase border-secondary mb-4">Get In Touch</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt text-justify"></i>Oblique Aqua Engineering Limited</br>14/1 Mirpur Road,Shyamoli</br>Dhaka,Bangladesh.</p>
+                        <p class="mb-2"><i class="fa fa-envelope text-primary"></i>info@oblique-bd.com</p>
+                        <p class="mb-0"><i class="fa fa-phone-alt text-primary"></i>+880 255075460</p>
+    
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="d-inline-block text-uppercase border-secondary mb-4">Quick Links</h4>
+                        <div class="d-flex flex-column justify-content-start ">
+                            <a class="mb-2 text-decoration-none underline text-dark" href="{% url 'home' %}">Home</a>
+                            <a class="mb-2 text-decoration-none underline text-dark" href="{% url 'about' %}">About Us</a>
+                            <a class="mb-2 text-decoration-none underline text-dark" href="{% url 'contact' %}">Contact</a>
+                            </div>
+                    </div>
+                   
+                    <div class="col-lg-4 col-md-6">
+                        <a href="index.html" class="logo">
+                            <img src="{% static 'img/white-logo.png' %}" alt="OBLIQUE-Logo">
+                        </a>
+                        <h6 class="mb-2 ">We aspire to become one of the world’s most credible beverage manufacturers in the near future. Tan Do is well-known for its private label services (OEM) for customers around the world.</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-success text-light border-top border-secondary py-3">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="text-center">
+                        <p class="mb-md-0">&copy;Copyright © 2023 <a class="text-primary" href="#">OBLIQUE</a>. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

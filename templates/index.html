@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contain %}
+    <!-- Hero Start -->
+    <div class="container-fluid py-5 mb-5 cover-header bg-image" style="background-image: url('{% static 'img/hero.jpg' %}');height: 50vh">
+        <div class="container py-4">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-center text-lg-start text-block">
+                    <h5 class="d-inline-block text-uppercase" style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To <a href="{% url 'home' %}" class="display-5" style="color:#e0000a;">OBLIQUE</a></h5></br>
+                    <h5>Aqua Engineering Limited</h5>
+                    <h2 class="display-10 mb-md-4">Best Water Treatment Solution Globally</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Hero End -->
+
+
+
+{% endblock contain %}

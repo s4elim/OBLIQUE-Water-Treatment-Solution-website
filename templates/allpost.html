@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contain %}
+<div class="text-center mx-auto mb-5" style="max-width: 500px;">
+  <h1 class="display-8">{% block title %} {% endblock title %}</h1>
+</div>
+<div class="row align-items-center">
+  <div class="mx-auto col-10 col-md-8 col-lg-6">
+    <form action='' method='post'>
+      <div class='container'>
+        <div class="row">
+          <div class="col pb-4">
+            {{ forms.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock contain %}
