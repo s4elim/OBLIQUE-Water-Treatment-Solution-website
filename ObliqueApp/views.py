@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.contrib.auth import logout as authlogout, authenticate,login as authlogin
 
 from ObliqueApp.forms import BlogForm
 
@@ -27,4 +28,16 @@ def addservice(request):
 
 
 def loginuser(request):
+    if request.method =="POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            authlogin(request, user)
+        else:
+            print(username, password)
     return render(request,'login.html') 
+
+def logout(request):
+    authlogout(request)
+    return redirect('home') 
